@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "Pénteki Ebéd ",
+    "options": [
+      {
+        "id": "opt1",
+        "name": "Pizza",
+        "votes": 2
+      },
+      {
+        "id": "opt2",
+        "name": "Kézműves Burger",
+        "votes": 1
+      },
+      {
+        "id": "opt3",
+        "name": "Sushi",
+        "votes": 0
+      }
+    ],
+    "votedUsers": [
+      1,
+      2,
+      3
+    ]
+  }
+]
