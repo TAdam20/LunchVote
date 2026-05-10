@@ -2,6 +2,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const { token, logout } = useContext(AuthContext);
@@ -27,26 +28,33 @@ function App() {
         )}
 
         {token && (
-          <button
-            onClick={logout}
-            style={{
-              marginLeft: 'auto',
-              cursor: 'pointer',
-              padding: '0.4rem 0.8rem',
-              background: '#dc3545',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              fontWeight: 'bold',
-            }}
-          >
-            Kijelentkezes
-          </button>
+          <>
+            <Link to="/dashboard" style={{ color: 'white', textDecoration: 'none' }}>
+              Dashboard
+            </Link>
+
+            <button
+              onClick={logout}
+              style={{
+                marginLeft: 'auto',
+                cursor: 'pointer',
+                padding: '0.4rem 0.8rem',
+                background: '#dc3545',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                fontWeight: 'bold',
+              }}
+            >
+              Kijelentkezes
+            </button>
+          </>
         )}
       </nav>
 
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );
