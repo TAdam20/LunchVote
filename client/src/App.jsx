@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Results from './pages/Results';
 
 function App() {
   const { token, logout } = useContext(AuthContext);
@@ -32,6 +33,9 @@ function App() {
             <Link to="/dashboard" style={{ color: 'white', textDecoration: 'none' }}>
               Dashboard
             </Link>
+            <Link to="/results" style={{ color: 'white', textDecoration: 'none' }}>
+              Eredmenyek
+            </Link>
 
             <button
               onClick={logout}
@@ -55,6 +59,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
     </div>
   );
